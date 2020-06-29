@@ -4,6 +4,7 @@ from jmetal.problem import ZDT1
 from jmetal.util.solution import get_non_dominated_solutions, read_solutions, print_function_values_to_file, \
     print_variables_to_file
 from jmetal.util.termination_criterion import StoppingByEvaluations
+from jmetal.lab.visualization import Plot
 
 
 """  
@@ -35,3 +36,6 @@ if __name__ == '__main__':
     print('Problem: ' + problem.get_name())
     print('Computing time: ' + str(algorithm.total_computing_time))
 
+
+    plot_front = Plot(title='Pareto front approximation', axis_labels=['x', 'y'])
+    plot_front.plot(front, label='NSGAII-ZDT1')
